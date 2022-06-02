@@ -32,5 +32,12 @@ namespace API.Controllers
         {
             return await _context.Users.FindAsync(id);
         }
+
+        //api/users?id=3
+        [HttpGet("GetUserById")]
+        public async Task<ActionResult<AppUser>> GetUserById(int id)
+        {
+            return await _context.Users.FindAsync(id);
+        }
     }
 }
