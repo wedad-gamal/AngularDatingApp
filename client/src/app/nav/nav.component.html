@@ -53,6 +53,10 @@
           *ngIf="accountService.currentUser$ | async as user"
           dropdown
         >
+          <img
+            src="{{ user.photoUrl || './assets/user.png' }}"
+            alt="{{ user.userName }}"
+          />
           <button
             id="button-basic"
             dropdownToggle
