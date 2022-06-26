@@ -16,25 +16,25 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
   {
-    path:'',
+    path: '',
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      {path: 'members', component: MemberListComponent},
-      {path: 'members/:username', component: MemberDetailComponent, resolve: {member: MemberDetailedResolver}},
-      {path: 'member/edit', component: MemberEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
-      {path: 'lists', component: ListsComponent},
-      {path: 'messages', component: MessagesComponent},
-      {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]}
+      { path: 'members', component: MemberListComponent },
+      { path: 'members/:username', component: MemberDetailComponent, resolve: { member: MemberDetailedResolver } },
+      { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard] },
+      { path: 'lists', component: ListsComponent },
+      { path: 'messages', component: MessagesComponent },
+      { path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard] }
     ]
   },
-  {path:'errors', component: TestErrorsComponent},
-  {path:'not-found', component: NotFoundComponent},
-  {path:'server-error', component: ServerErrorComponent},
-  {path: '**', component: NotFoundComponent, pathMatch:'full'},
-  
+  { path: 'errors', component: TestErrorsComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
+  { path: '**', component: NotFoundComponent, pathMatch: 'full' },
+
 ];
 
 @NgModule({
